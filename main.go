@@ -1,11 +1,13 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/MatheusAbdias/automata-maze/pkg/utils"
 )
 
 func main() {
-	fmt.Println(utils.ReadCSVFile("automata.csv"))
+	table := utils.ReadCSVFile("automata.csv")
+
+	matrix := utils.ConverToTableIntegerMatrix(table)
+	utils.ConvertIntMatrixToAutomataTable(matrix)
+
 }
